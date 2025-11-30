@@ -281,35 +281,97 @@
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 # Exercícios 64 - Maior e Menor valores:
 
-resp = 'S'
-soma = 0
-quant = 0
-media = 0
-maior = 0
-menor = 0
+# resp = 'S'
+# soma = 0
+# quant = 0
+# media = 0
+# maior = 0
+# menor = 0
 
-while resp in 'Ss':
-   num = int(input('Digite um número: '))
+# while resp in 'Ss':
+#    num = int(input('Digite um número: '))
 
-   soma += num
-   quant += 1
+#    soma += num
+#    quant += 1
 
-   if quant == 1:
-      maior = menor = num
+#    if quant == 1:
+#       maior = menor = num
    
-   else:
-      if num > maior:
-         maior = num
+#    else:
+#       if num > maior:
+#          maior = num
       
-      if num < menor:
-         menor = num
+#       if num < menor:
+#          menor = num
 
-   resp = str(input('Quer continuar? [S/N]: ')).upper().strip()[0]
+#    resp = str(input('Quer continuar? [S/N]: ')).upper().strip()[0]
 
 
-media = soma / quant
+# media = soma / quant
 
-print(f'Você digitou {quant} números e a média foi {media}')
-print(f'Maior número de valor é: {maior}')
-print(f'Menor número de valor é: {menor}')
+# print(f'Você digitou {quant} números e a média foi {media}')
+# print(f'Maior número de valor é: {maior}')
+# print(f'Menor número de valor é: {menor}')
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+# Parte 3 - While Break:
+
+# n = 0
+# s = 0
+
+# while True:
+#    n = int(input('Digite um valor: '))
+
+#    if n == 999:
+#       break
+#    s += n
+
+# print(f'Resultado de todos os valores: {s}')
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+# Exercícios 66:
+
+# n = 0
+# s = 0
+# quants = 0
+
+# while True:
+#    n = int(input('Digite um valor: '))
+#    quants += 1
+
+#    if n == 999:
+#       quants -= 1
+#       break
+#    s += n
+
+# print(f'Quantos números foram digitados: {quants}')
+# print(f'Resultado de todos os valores: {s}')
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+# Exercícios 67 - Tabuada:
+
+r = 'S'
+num = 0
+
+while r in 'Ss':
+   num = int(input('Escolhe um número de tabuada: '))
+
+   if num < 0:
+      print(f'Número: {num} -> Invalído.')
+      break
+
+   else:
+      for c in range(1, 11):
+         mult = num * c
+         print(f'{num} x {c} = {mult}')
+         
+   r = str(input('Você quer continuar? [S/N]: ')).strip().upper()[0]
+
+print('Programa tabuada encerrado. Volte sempre!')
 
