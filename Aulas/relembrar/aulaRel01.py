@@ -335,43 +335,88 @@
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 # Exercícios 66:
 
-# n = 0
 # s = 0
 # quants = 0
 
 # while True:
 #    n = int(input('Digite um valor: '))
-#    quants += 1
 
 #    if n == 999:
-#       quants -= 1
 #       break
+   
+#    quants += 1
 #    s += n
 
 # print(f'Quantos números foram digitados: {quants}')
-# print(f'Resultado de todos os valores: {s}')
+# print(f'A soma de todos os valores: {s}')
 
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 # Exercícios 67 - Tabuada:
 
-r = 'S'
-num = 0
+# r = 'S'
 
-while r in 'Ss':
-   num = int(input('Escolhe um número de tabuada: '))
+# while r in 'Ss':
+#    num = int(input('Escolhe um número de tabuada: '))
 
-   if num < 0:
-      print(f'Número: {num} -> Invalído.')
-      break
+#    if num < 0:
+#       break
 
-   else:
-      for c in range(1, 11):
-         mult = num * c
-         print(f'{num} x {c} = {mult}')
+#    else:
+#       for c in range(1, 11):
+#          mult = num * c
+#          print(f'{num} x {c} = {mult}')
          
-   r = str(input('Você quer continuar? [S/N]: ')).strip().upper()[0]
+#    r = str(input('Você quer continuar? [S/N]: ')).strip().upper()[0]
 
-print('Programa tabuada encerrado. Volte sempre!')
+# print('Programa tabuada encerrado. Volte sempre!')
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+# Exercícios 68 - Jogo: Par ou Impar:
+
+import random
+
+v = 0
+
+while True:
+   jogador = int(input('-> Diga um valor: '))
+   computador = random.randint(0, 10)
+
+   total = jogador + computador
+   tipo = ' '
+
+   while tipo not in 'PI':
+      tipo = str(input('Par ou Impar? [P/I]: ')).strip().upper()[0]
+   
+   print(f'\nJogador: {jogador}\nComputador: {computador}\nTotal: {total} ', end='')
+   print('-> PAR' if total % 2 == 0 else '-> IMPAR')
+
+   if tipo == 'P':
+      if total % 2 == 0:
+         print('---- Você VENCEU!! ----')
+         v += 1
+      else:
+         print('---- Você PERDEU. ----')
+         break
+   
+   elif tipo == 'I':
+      if total % 2 == 1:
+         print('---- Você VENCEU!! ----')
+         v += 1
+      else:
+         print('---- Você PERDEU. ----')
+         break
+   
+   print('\nVamos jogar novamente...')
+
+print(f'\nGAME OVER! Você venceu {v} vezes.')
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+# Exercícios 69 - Análise de Dados do grupo:
+
 
