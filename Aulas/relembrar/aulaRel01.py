@@ -377,46 +377,166 @@
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 # Exercícios 68 - Jogo: Par ou Impar:
 
-import random
+# import random
 
-v = 0
+# v = 0
 
-while True:
-   jogador = int(input('-> Diga um valor: '))
-   computador = random.randint(0, 10)
+# while True:
+#    jogador = int(input('-> Diga um valor: '))
+#    computador = random.randint(0, 10)
 
-   total = jogador + computador
-   tipo = ' '
+#    total = jogador + computador
+#    tipo = ' '
 
-   while tipo not in 'PI':
-      tipo = str(input('Par ou Impar? [P/I]: ')).strip().upper()[0]
+#    while tipo not in 'PI':
+#       tipo = str(input('Par ou Impar? [P/I]: ')).strip().upper()[0]
    
-   print(f'\nJogador: {jogador}\nComputador: {computador}\nTotal: {total} ', end='')
-   print('-> PAR' if total % 2 == 0 else '-> IMPAR')
+#    print(f'\nJogador: {jogador}\nComputador: {computador}\nTotal: {total} ', end='')
+#    print('-> PAR' if total % 2 == 0 else '-> IMPAR')
 
-   if tipo == 'P':
-      if total % 2 == 0:
-         print('---- Você VENCEU!! ----')
-         v += 1
-      else:
-         print('---- Você PERDEU. ----')
-         break
+#    if tipo == 'P':
+#       if total % 2 == 0:
+#          print('---- Você VENCEU!! ----')
+#          v += 1
+#       else:
+#          print('---- Você PERDEU. ----')
+#          break
    
-   elif tipo == 'I':
-      if total % 2 == 1:
-         print('---- Você VENCEU!! ----')
-         v += 1
-      else:
-         print('---- Você PERDEU. ----')
-         break
+#    elif tipo == 'I':
+#       if total % 2 == 1:
+#          print('---- Você VENCEU!! ----')
+#          v += 1
+#       else:
+#          print('---- Você PERDEU. ----')
+#          break
    
-   print('\nVamos jogar novamente...')
+#    print('\nVamos jogar novamente...')
 
-print(f'\nGAME OVER! Você venceu {v} vezes.')
+# print(f'\nGAME OVER! Você venceu {v} vezes.')
 
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 # Exercícios 69 - Análise de Dados do grupo:
 
+# tot18 = 0 # Quantidade de pessoas com mais de 18 anos.
+# totH = 0 # Quantidade dos homens com cadastrados.
+# totM20 = 0 # Quantidade das mulheres com menos de 20 anos.
+
+# while True:
+#    idade = int(input('Idade: '))
+   
+#    genero = ' '
+#    while genero not in 'MF':
+#       genero = str(input('Gênero [M/F]: ')).strip().upper()[0]
+   
+#    if idade >= 18:
+#       tot18 += 1
+   
+#    if genero == 'M':
+#       totH += 1
+   
+#    if genero == 'F' and idade < 20:
+#       totM20 += 1
+
+#    resp = ' '
+#    while resp not in 'SN':
+#       resp = str(input('Quer continuar? [S/N]: ')).strip().upper()[0]
+   
+#    if resp == 'N':
+#       break
+
+
+# print(f'\n- Total de pessoas com mais de 18 anos: {tot18}')
+# print(f'- Ao todo temos {totH} homens cadastrados.')
+# print(f'- E temos {totM20} mulheres com menos de 20 anos.')
+# print('\nPrograma encerrado.')
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+'''
+- Exercícios 70 - Estatísticas em Produtos:
+   - Crie um programa que leia o nome e o preço de vários produtos. O programa deverá perguntar se o usuário vai continuar.
+   No final, mostre:
+      - A) Qual é o total gasto na compra.
+      - B) Quantos produtos custam mais de R$1000,00.
+      - C) Qual é o nome do produto mais barato.
+'''
+
+# total = 0
+# totMil = 0
+# menor = 0
+# cont = 0
+# barato = ''
+
+# while True:
+#    produto = str(input('Nome do produto: '))
+#    preco = float(input('Preço: R$'))
+
+#    total += preco
+#    cont += 1
+
+#    if preco > 1000:
+#       totMil += 1
+
+#    if cont == 1 or preco < menor:
+#       menor = preco
+#       barato = produto
+
+#    resp = ' '
+#    while resp not in 'SN':
+#       resp = str(input('Você quer continuar? [S/N]: ')).strip().upper()[0]
+   
+#    if resp == 'N':
+#       break
+
+
+# print('{:-^40}'.format(' FIM PROGRAMA '))
+# print(f'-> O total do valor de gasto: R${total:.2f}') 
+# print(f'-> Temos {int(totMil)} produtos custando mais de R$1000.00')
+# print(f'-> O produto mais barato foi {barato} que custa R${menor:.2f}\n')
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------
+'''
+ - Exercícios 71 - FINAL: Simulador de Caixa Eletrônico
+'''
+
+print('=' * 30)
+print('{:^30}'.format('BANCO CEV'))
+print('=' * 30)
+
+valor = int(input('Que valor você quer sacar? R$'))
+total = valor
+
+ced = 50 # ced = Cédulas
+totCed = 0 # totCed = Total de cédulas
+
+while True:
+   if total >= ced:
+      total -= ced
+      totCed += 1
+   
+   else:
+      if totCed > 0:
+         print(f'Total de {totCed} cédulas de R${ced}')
+      
+      if ced == 50:
+         ced = 20
+      elif ced == 20:
+         ced = 10
+      elif ced == 10:
+         ced = 5
+      elif ced == 5:
+         ced = 1
+      
+      totCed = 0
+
+      if total == 0:
+         break
+
+print('=' * 30)
+print('Programa encerrado. Volte sempre ao BANCO CEV! Tenha uma boa tarde!')
 
